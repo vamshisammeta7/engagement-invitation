@@ -13,7 +13,7 @@
       --gold-light: #faeec7;
       --gold-gradient: linear-gradient(135deg, #e3ba4b 0%, #faeec7 50%, #b8860b 100%);
       --emerald-dark: #07120d;
-      --card-bg: rgba(13, 25, 20, 0.82);
+      --card-bg: rgba(13, 25, 20, 0.85);
       --card-border: rgba(212, 175, 55, 0.38);
       --font-royal: 'Cinzel', serif;
       --font-script: 'Great Vibes', cursive;
@@ -63,11 +63,45 @@
       50% { transform: translateY(-80px) scale(1.4); opacity: 0.85; }
     }
 
+    /* Floating Music Control Button - Highly Visible */
+    .music-toggle-btn {
+      position: fixed;
+      top: 14px;
+      right: 18px;
+      z-index: 99999;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(13, 25, 20, 0.9);
+      border: 1.5px solid var(--gold-primary);
+      color: var(--gold-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 19px;
+      cursor: pointer;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.6);
+      transition: all 0.3s ease;
+      outline: none;
+    }
+    .music-toggle-btn:hover {
+      transform: scale(1.12);
+      background: var(--gold-gradient);
+      color: #120e08;
+    }
+    .music-toggle-btn.playing {
+      animation: pulseMusic 2s infinite ease-in-out;
+    }
+    @keyframes pulseMusic {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.55); }
+      50% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
+    }
+
     /* 1. ROYAL SEAL ENVELOPE CURTAIN */
     .seal-curtain {
       position: fixed;
       inset: 0;
-      z-index: 100;
+      z-index: 1000;
       background: radial-gradient(circle at center, #10241b 0%, #040806 100%);
       display: flex;
       flex-direction: column;
@@ -245,6 +279,7 @@
       right: 0;
       z-index: 50;
       padding: 16px 24px;
+      padding-right: 76px; /* space for floating music btn */
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -786,13 +821,13 @@
 </head>
 <body>
 
-    <!-- Background Audio: Maangalyam Ending Theme -->
+  <!-- Background Audio: Maangalyam Ending Theme -->
   <audio id="bgMusic" loop preload="auto">
     <source src="Maangalyam_Ending_Theme.mp3" type="audio/mpeg">
   </audio>
 
   <!-- Floating Music Toggle Button -->
-  <button class="music-toggle-btn" id="musicToggle" title="Play/Mute Music">
+  <button class="music-toggle-btn" id="musicToggle" title="Play / Pause Music">
     <span id="musicIcon">🎵</span>
   </button>
 
@@ -1039,11 +1074,46 @@
     const upBtn = document.getElementById('upBtn');
     const downBtn = document.getElementById('downBtn');
     const curtain = document.getElementById('sealCurtain');
+    const audio = document.getElementById('bgMusic');
+    const musicBtn = document.getElementById('musicToggle');
+    const musicIcon = document.getElementById('musicIcon');
+    let isMusicPlaying = false;
     let currentIndex = 0;
 
-    // Break Seal Action
+    // Music Control
+    function startMusic() {
+      if (!audio) return;
+      audio.play().then(() => {
+        isMusicPlaying = true;
+        musicBtn.classList.add('playing');
+        musicIcon.innerText = '🔊';
+      }).catch(err => {
+        console.log("Audio autoplay waiting for user interaction:", err);
+      });
+    }
+
+    function toggleMusic() {
+      if (!audio) return;
+      if (isMusicPlaying) {
+        audio.pause();
+        isMusicPlaying = false;
+        musicBtn.classList.remove('playing');
+        musicIcon.innerText = '🔇';
+      } else {
+        audio.play().then(() => {
+          isMusicPlaying = true;
+          musicBtn.classList.add('playing');
+          musicIcon.innerText = '🔊';
+        });
+      }
+    }
+
+    musicBtn.addEventListener('click', toggleMusic);
+
+    // Break Seal Action: Initiates music & reveals card
     function unlockInvitation() {
       curtain.classList.add('opened');
+      startMusic();
       showerPetals();
       updateNavigation(0);
     }
@@ -1051,7 +1121,7 @@
     document.getElementById('monogramSealBtn').addEventListener('click', unlockInvitation);
     document.getElementById('openInvitationBtn').addEventListener('click', unlockInvitation);
 
-    // Scroll to specific slide
+    // Navigation logic
     function scrollToSlide(index) {
       if (index < 0 || index >= sections.length) return;
       currentIndex = index;
@@ -1082,7 +1152,7 @@
       downBtn.disabled = (index === sections.length - 1);
     }
 
-    // Scroll listener with debounce for smooth synchronization
+    // Scroll listener with debounce
     let isScrolling;
     scroller.addEventListener('scroll', () => {
       clearTimeout(isScrolling);
@@ -1128,7 +1198,7 @@
     setInterval(runCountdown, 1000);
     runCountdown();
 
-    // Unique Feature: Shower Petals & Akshata with live counter
+    // Petal shower
     let blessings = 1024;
     function showerPetals() {
       blessings += 1;
@@ -1163,7 +1233,7 @@
       setTimeout(() => toast.classList.remove('visible'), 4000);
     }
 
-    // Calendar .ics file generator
+    // Calendar .ics generator
     function downloadCalendar(e) {
       e.preventDefault();
       const ics = [
@@ -1191,7 +1261,7 @@
       URL.revokeObjectURL(url);
     }
 
-    // Festive Petal & Gold Akshata Particle Simulator
+    // Particle Simulator
     function launchPetalsAndConfetti() {
       const canvas = document.getElementById('confettiCanvas');
       const ctx = canvas.getContext('2d');
