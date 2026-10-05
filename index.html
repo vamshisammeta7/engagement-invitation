@@ -3,21 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Engagement Celebration | Devi Pravalika & Vamshi Krishna #VK&DP</title>
+  <title>Engagement Celebration | Vamshi Krishna & Devi Pravalika #VK&DP</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Shrikhand&display=swap" rel="stylesheet">
   <style>
     :root {
       --gold-primary: #d4af37;
       --gold-light: #faeec7;
       --gold-gradient: linear-gradient(135deg, #e3ba4b 0%, #faeec7 50%, #b8860b 100%);
       --emerald-dark: #07120d;
-      --card-bg: rgba(13, 25, 20, 0.85);
-      --card-border: rgba(212, 175, 55, 0.38);
+      --card-bg: rgba(13, 25, 20, 0.88);
+      --card-border: rgba(212, 175, 55, 0.42);
       --font-royal: 'Cinzel', serif;
       --font-script: 'Great Vibes', cursive;
       --font-body: 'Montserrat', sans-serif;
+      --font-title: 'Shrikhand', cursive;
+      --cyan-pop: #5ce1e6;
+      --cherry-pink: #ff75a0;
     }
 
     * {
@@ -63,7 +66,7 @@
       50% { transform: translateY(-80px) scale(1.4); opacity: 0.85; }
     }
 
-    /* Floating Music Control Button - Highly Visible */
+    /* Floating Music Control Button */
     .music-toggle-btn {
       position: fixed;
       top: 14px;
@@ -135,11 +138,9 @@
       animation: royalPulse 2.8s infinite;
       transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
-
     .monogram-seal-btn:hover {
       transform: scale(1.1);
     }
-
     .monogram-seal-btn .monogram-text {
       font-family: var(--font-royal);
       font-size: 24px;
@@ -147,7 +148,6 @@
       letter-spacing: 2px;
       line-height: 1.1;
     }
-
     .monogram-seal-btn .monogram-sub {
       font-size: 10.5px;
       letter-spacing: 3px;
@@ -203,7 +203,6 @@
       box-shadow: 0 10px 25px rgba(212, 175, 55, 0.35);
       transition: transform 0.25s, box-shadow 0.25s;
     }
-
     .open-invitation-btn:hover {
       transform: translateY(-2px);
       box-shadow: 0 14px 32px rgba(212, 175, 55, 0.5);
@@ -231,21 +230,21 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 85px 22px 75px;
+      padding: 82px 20px 75px;
       position: relative;
       overflow: hidden;
     }
 
-    /* Glassmorphism Card Frame */
+    /* Royal Glassmorphism Card Frame */
     .royal-glass-card {
       background: var(--card-bg);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border: 1px solid var(--card-border);
       border-radius: 28px;
-      padding: clamp(24px, 5vw, 42px);
+      padding: clamp(20px, 4vw, 36px);
       width: 100%;
-      max-width: 580px;
+      max-width: 550px;
       text-align: center;
       position: relative;
       box-shadow: 0 30px 60px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255,255,255,0.12);
@@ -279,7 +278,7 @@
       right: 0;
       z-index: 50;
       padding: 16px 24px;
-      padding-right: 76px; /* space for floating music btn */
+      padding-right: 76px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -314,12 +313,10 @@
       cursor: pointer;
       transition: all 0.3s ease;
     }
-
     .nav-pill:hover {
       color: #fff;
       border-color: var(--gold-primary);
     }
-
     .nav-pill.active {
       background: var(--gold-gradient);
       color: #120e08;
@@ -330,7 +327,7 @@
     /* RIGHT SIDEBAR DOTS */
     .floating-sidebar {
       position: fixed;
-      right: 18px;
+      right: 16px;
       top: 50%;
       transform: translateY(-50%);
       z-index: 50;
@@ -349,7 +346,6 @@
       cursor: pointer;
       transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
-
     .nav-dot.active {
       height: 28px;
       border-radius: 12px;
@@ -360,7 +356,7 @@
     /* BOTTOM ARROWS */
     .fixed-footer-arrows {
       position: fixed;
-      bottom: 18px;
+      bottom: 16px;
       left: 50%;
       transform: translateX(-50%);
       z-index: 50;
@@ -384,7 +380,6 @@
       backdrop-filter: blur(8px);
       transition: all 0.25s;
     }
-
     .arrow-btn:hover:not(:disabled) {
       background: var(--gold-gradient);
       color: #120e08;
@@ -395,81 +390,99 @@
       cursor: not-allowed;
     }
 
-    /* TYPOGRAPHY */
+    /* SLIDE 1: RETAINED LINES & STYLING */
     .sub-eyebrow {
       font-family: var(--font-royal);
       font-size: 11px;
       text-transform: uppercase;
-      letter-spacing: 4px;
+      letter-spacing: 3.5px;
       color: var(--gold-primary);
-      margin-bottom: 10px;
-      font-weight: 600;
+      margin-bottom: 6px;
+      font-weight: 700;
     }
 
-    .script-verse {
-      font-family: var(--font-script);
-      font-size: clamp(24px, 4vw, 30px);
-      color: #f7eecf;
-      line-height: 1.2;
-      margin-bottom: 12px;
+    .playful-intro {
+      font-family: var(--font-royal);
+      font-size: clamp(14px, 3.2vw, 17px);
+      color: var(--gold-light);
+      font-weight: 600;
+      margin-bottom: 8px;
     }
 
     .couple-names {
       font-family: var(--font-royal);
-      font-size: clamp(28px, 5.5vw, 38px);
+      font-size: clamp(26px, 5.2vw, 36px);
       line-height: 1.2;
       font-weight: 700;
       color: #fff;
       text-shadow: 0 4px 20px rgba(0,0,0,0.6);
-      margin-bottom: 14px;
+      margin-bottom: 10px;
     }
-
     .couple-names span {
       display: block;
       font-family: var(--font-script);
-      font-size: clamp(26px, 4vw, 34px);
+      font-size: clamp(22px, 3.8vw, 28px);
       color: var(--gold-primary);
       margin: 2px 0;
       font-weight: 400;
     }
 
+    /* Family Lineage Box (Vamshi on top, no Bride/Groom heads) */
     .family-lineage-box {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(212, 175, 55, 0.2);
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px dashed rgba(212, 175, 55, 0.35);
       border-radius: 14px;
-      padding: 12px 14px;
-      margin: 10px auto 14px;
+      padding: 9px 12px;
+      margin: 6px auto 10px;
       text-align: center;
-      max-width: 480px;
+      max-width: 460px;
     }
 
     .lineage-row {
-      font-size: 12.5px;
+      font-size: 12px;
       color: #f3ede2;
-      line-height: 1.6;
+      line-height: 1.5;
     }
     .lineage-highlight {
       color: var(--gold-light);
-      font-weight: 600;
+      font-weight: 700;
     }
 
-    .invite-text {
-      font-size: 13px;
-      line-height: 1.65;
-      color: #d1c7b8;
+    /* Couple Artwork Container */
+    .couple-art-container {
+      width: 100%;
+      max-width: 195px;
+      margin: 6px auto 10px;
+      position: relative;
+      filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.75));
+      animation: floatCouple 4s infinite ease-in-out;
+    }
+    @keyframes floatCouple {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+    .couple-illustration {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .invitation-quote {
+      font-size: 12.5px;
+      line-height: 1.55;
+      color: #faeec7;
       max-width: 440px;
-      margin: 0 auto 16px;
-      font-weight: 300;
+      margin: 0 auto 10px;
+      font-weight: 500;
     }
 
     .gold-separator {
-      width: 70px;
+      width: 60px;
       height: 1px;
       background: var(--gold-gradient);
-      margin: 16px auto;
+      margin: 10px auto;
       position: relative;
     }
-
     .gold-separator::after {
       content: "✦";
       position: absolute;
@@ -478,33 +491,30 @@
       background: var(--card-bg);
       padding: 0 4px;
       color: var(--gold-primary);
-      font-size: 12px;
+      font-size: 11px;
     }
 
-    /* COUNTDOWN */
+    /* Countdown Grid */
     .countdown-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 8px;
-      max-width: 350px;
-      margin: 12px auto 0;
+      gap: 7px;
+      max-width: 330px;
+      margin: 8px auto 0;
     }
-
     .countdown-tile {
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(212, 175, 55, 0.22);
       border-radius: 12px;
-      padding: 8px 4px;
+      padding: 7px 4px;
       backdrop-filter: blur(4px);
     }
-
     .timer-digit {
       font-family: var(--font-royal);
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 700;
       color: #fff;
     }
-
     .timer-tag {
       font-size: 8.5px;
       text-transform: uppercase;
@@ -525,7 +535,6 @@
       text-align: left;
       gap: 15px;
     }
-
     .detail-icon-wrap {
       width: 44px;
       height: 44px;
@@ -538,7 +547,6 @@
       font-size: 20px;
       flex-shrink: 0;
     }
-
     .detail-label {
       font-size: 10px;
       text-transform: uppercase;
@@ -546,13 +554,11 @@
       color: var(--gold-light);
       margin-bottom: 2px;
     }
-
     .detail-val {
       font-size: 14.5px;
       font-weight: 600;
       color: #fff;
     }
-
     .detail-sub {
       font-size: 12px;
       color: #c4b9a9;
@@ -565,7 +571,6 @@
       gap: 10px;
       margin-top: 16px;
     }
-
     .action-btn {
       flex: 1;
       padding: 12px;
@@ -585,7 +590,6 @@
       cursor: pointer;
       transition: all 0.25s ease;
     }
-
     .action-btn:hover {
       background: var(--gold-gradient);
       color: #120e08;
@@ -597,7 +601,6 @@
     .timeline-wrap {
       margin-top: 16px;
     }
-
     .timeline-node {
       position: relative;
       text-align: left;
@@ -605,7 +608,6 @@
       margin-bottom: 20px;
     }
     .timeline-node:last-child { margin-bottom: 0; }
-
     .timeline-node::before {
       content: "";
       position: absolute;
@@ -616,7 +618,6 @@
       background: linear-gradient(180deg, var(--gold-primary), transparent);
     }
     .timeline-node:last-child::before { display: none; }
-
     .node-icon {
       position: absolute;
       left: 5px;
@@ -632,7 +633,6 @@
       font-size: 12px;
       box-shadow: 0 0 10px rgba(212, 175, 55, 0.35);
     }
-
     .node-time {
       font-size: 10.5px;
       font-weight: 600;
@@ -641,14 +641,12 @@
       color: var(--gold-primary);
       margin-bottom: 2px;
     }
-
     .node-title {
       font-size: 15.5px;
       font-weight: 600;
       color: #fff;
       margin-bottom: 2px;
     }
-
     .node-desc {
       font-size: 12.5px;
       color: #c4bbb0;
@@ -656,110 +654,216 @@
       font-weight: 300;
     }
 
-    /* SLIDE 4: BLESSINGS WALL & FLOWER SHOWER */
-    .wishes-counter-card {
+    /* ============================================================== */
+    /* SLIDE 4: THE ROYAL VARMALA & RING TOSS PLAYFUL GAME */
+    /* ============================================================== */
+    .game-arena-card {
       background: rgba(212, 175, 55, 0.08);
-      border: 1px dashed rgba(212, 175, 55, 0.4);
-      border-radius: 18px;
-      padding: 16px 20px;
-      margin: 14px 0;
+      border: 1.5px dashed var(--gold-primary);
+      border-radius: 22px;
+      padding: 13px 15px;
+      margin: 8px 0 10px;
+      position: relative;
     }
 
-    .counter-number {
-      font-family: var(--font-royal);
-      font-size: 36px;
-      font-weight: 800;
-      color: var(--gold-light);
+    .game-scoreboard {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 14px;
+      padding: 8px 14px;
+      margin-bottom: 8px;
+    }
+    .game-team-score {
+      text-align: center;
+      flex: 1;
+    }
+    .team-score-num {
+      font-family: var(--font-title);
+      font-size: 24px;
       line-height: 1;
+      color: #fff;
+    }
+    .team-label-tag {
+      font-size: 11px;
+      font-family: var(--font-body);
+      font-weight: 700;
+      margin-top: 3px;
+    }
+    .score-vk { color: var(--cyan-pop); }
+    .score-dp { color: var(--cherry-pink); }
+    .vs-sign {
+      font-family: var(--font-royal);
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--gold-primary);
+      padding: 0 10px;
     }
 
-    .counter-caption {
-      font-size: 11.5px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #d8cebe;
-      margin-top: 6px;
+    /* Interactive Throw Stage */
+    .toss-stage {
+      position: relative;
+      height: 140px;
+      background: radial-gradient(circle at center, #1c2b22 0%, #08110c 100%);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-end;
+      padding-bottom: 12px;
+      box-shadow: inset 0 2px 10px rgba(0,0,0,0.5);
     }
 
-    .shower-flower-btn {
+    .target-pedestal {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .target-pedestal:active {
+      transform: scale(0.92);
+    }
+
+    .target-avatar-circle {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #112018;
+      border: 2px solid var(--gold-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      box-shadow: 0 0 14px rgba(212, 175, 55, 0.45);
+      position: relative;
+    }
+
+    .garland-badge {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: var(--gold-primary);
+      color: #120e08;
+      border-radius: 12px;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 2px 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    .pedestal-base {
+      width: 66px;
+      height: 10px;
+      background: linear-gradient(180deg, #3a4b40, #141f18);
+      border-radius: 6px;
+      margin-top: 5px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .target-label {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 700;
+      margin-top: 3px;
+    }
+
+    /* Flying Projectile */
+    .flying-item {
+      position: absolute;
+      font-size: 28px;
+      pointer-events: none;
+      z-index: 50;
+      animation: tossFly 0.65s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    }
+    @keyframes tossFly {
+      0% {
+        transform: translate(0, 45px) scale(0.6) rotate(0deg);
+        opacity: 0;
+      }
+      30% {
+        opacity: 1;
+        transform: translate(0, -35px) scale(1.3) rotate(180deg);
+      }
+      100% {
+        transform: translate(0, -80px) scale(1) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Throw Buttons */
+    .game-actions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .throw-btn {
+      padding: 12px 10px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.3);
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+      transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .throw-btn:active {
+      transform: scale(0.92);
+    }
+
+    .btn-throw-vk {
+      background: linear-gradient(135deg, #1d4ed8, #0ea5e9);
+      color: #fff;
+    }
+    .btn-throw-dp {
+      background: linear-gradient(135deg, #be185d, #ff75a0);
+      color: #fff;
+    }
+
+    .btn-burst-both {
       width: 100%;
-      padding: 14px;
+      margin-top: 8px;
+      padding: 13px;
       background: var(--gold-gradient);
       border: none;
       border-radius: 14px;
+      color: #120e08;
+      font-family: var(--font-body);
       font-size: 12.5px;
-      font-weight: 700;
-      letter-spacing: 2px;
+      font-weight: 800;
+      letter-spacing: 1px;
       text-transform: uppercase;
-      color: #120e08;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.35);
-      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
+      transition: transform 0.2s;
+    }
+    .btn-burst-both:active {
+      transform: scale(0.95);
     }
 
-    .shower-flower-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 30px rgba(212, 175, 55, 0.5);
-    }
-
-    .guestbook-box {
-      margin-top: 14px;
-      text-align: left;
-    }
-
-    .guest-input-row {
-      display: flex;
-      gap: 8px;
+    .game-commentary {
       margin-top: 8px;
-    }
-
-    .guest-input {
-      flex: 1;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(212, 175, 55, 0.3);
-      padding: 11px 14px;
-      border-radius: 10px;
-      color: #fff;
-      font-size: 13px;
-      outline: none;
-    }
-    .guest-input:focus {
-      border-color: var(--gold-primary);
-    }
-
-    .send-wish-btn {
-      background: rgba(212, 175, 55, 0.2);
-      border: 1px solid var(--gold-primary);
-      color: #faeec7;
-      border-radius: 10px;
-      padding: 0 16px;
-      font-weight: 600;
-      font-size: 12.5px;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .send-wish-btn:hover {
-      background: var(--gold-gradient);
-      color: #120e08;
-    }
-
-    .wishes-stream {
-      margin-top: 12px;
-      background: rgba(0, 0, 0, 0.25);
+      background: rgba(0, 0, 0, 0.35);
       border-radius: 12px;
-      padding: 10px 14px;
-      font-size: 12.5px;
-      color: #ebdcb9;
-      font-style: italic;
-      min-height: 40px;
+      padding: 8px 12px;
+      font-size: 12px;
+      color: #fce79f;
+      min-height: 38px;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: all 0.3s;
+      font-style: italic;
     }
 
     .scroll-hint {
@@ -770,19 +874,18 @@
       letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--gold-light);
-      margin-top: 14px;
+      margin-top: 10px;
       cursor: pointer;
       opacity: 0.85;
       animation: bounceHint 2s infinite ease-in-out;
     }
-
     @keyframes bounceHint {
       0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
       40% { transform: translateY(-5px); }
       60% { transform: translateY(-2px); }
     }
 
-    /* Toast Notification */
+    /* Toast */
     .toast-popup {
       position: fixed;
       bottom: 75px;
@@ -797,7 +900,7 @@
       box-shadow: 0 14px 30px rgba(0, 0, 0, 0.5);
       transition: transform 0.4s ease, opacity 0.4s ease;
       opacity: 0;
-      z-index: 999;
+      z-index: 9999;
       pointer-events: none;
     }
     .toast-popup.visible {
@@ -815,13 +918,14 @@
     @media (max-width: 600px) {
       .nav-pills { display: none; }
       .floating-sidebar { right: 10px; }
-      .royal-glass-card { padding: 22px 16px; }
+      .royal-glass-card { padding: 20px 14px; }
+      .toss-stage { height: 135px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Background Audio: Maangalyam Ending Theme -->
+  <!-- Audio Element: Linked to your uploaded music file -->
   <audio id="bgMusic" loop preload="auto">
     <source src="Maangalyam_Ending_Theme.mp3" type="audio/mpeg">
   </audio>
@@ -849,7 +953,7 @@
       <span class="monogram-sub">15 OCT 2026</span>
     </button>
     
-    <h1 class="curtain-title">Devi Pravalika<br>&amp;<br>Vamshi Krishna</h1>
+    <h1 class="curtain-title">Vamshi Krishna<br>&amp;<br>Devi Pravalika</h1>
     <p class="curtain-date">Thursday, 15th October 2026 • 10:00 AM</p>
     <button class="open-invitation-btn" id="openInvitationBtn">Open Invitation</button>
   </div>
@@ -858,19 +962,19 @@
   <nav class="fixed-nav-bar">
     <div class="nav-hashtag">#VK<span>&amp;</span>DP</div>
     <div class="nav-pills">
-      <button class="nav-pill active" onclick="scrollToSlide(0)">Invitation</button>
+      <button class="nav-pill active" onclick="scrollToSlide(0)">Story</button>
       <button class="nav-pill" onclick="scrollToSlide(1)">Details</button>
       <button class="nav-pill" onclick="scrollToSlide(2)">Muhurtham</button>
-      <button class="nav-pill" onclick="scrollToSlide(3)">Blessings</button>
+      <button class="nav-pill" onclick="scrollToSlide(3)">Ring Toss 🎮</button>
     </div>
   </nav>
 
   <!-- FIXED FLOATING RIGHT SIDEBAR DOTS -->
   <aside class="floating-sidebar">
-    <div class="nav-dot active" onclick="scrollToSlide(0)" title="Invitation"></div>
+    <div class="nav-dot active" onclick="scrollToSlide(0)" title="Story"></div>
     <div class="nav-dot" onclick="scrollToSlide(1)" title="Details"></div>
     <div class="nav-dot" onclick="scrollToSlide(2)" title="Muhurtham"></div>
-    <div class="nav-dot" onclick="scrollToSlide(3)" title="Blessings"></div>
+    <div class="nav-dot" onclick="scrollToSlide(3)" title="Ring Toss"></div>
   </aside>
 
   <!-- FIXED BOTTOM ARROWS -->
@@ -882,39 +986,120 @@
   <!-- 2. FULLSCREEN SCROLL SNAP CONTAINER -->
   <main class="fullpage-scroller" id="fullpageScroller">
 
-    <!-- SLIDE 1: ROYAL INVITATION & LIVE COUNTDOWN -->
+    <!-- SLIDE 1: RETAINED STORY LINES + TRADITIONAL AESTHETICS + COUPLE ILLUSTRATION -->
     <section class="slide-section active" id="slide0">
       <div class="royal-glass-card">
-        <div class="sub-eyebrow">Auspicious Engagement Ceremony • #VK&amp;DP</div>
-        <div class="script-verse">With the heavenly blessings &amp; joyous love of our families</div>
+        <div class="sub-eyebrow">✨ NEW CHAPTER UNLOCKED • #VK&amp;DP ✨</div>
+        <div class="playful-intro">Two main characters, one legendary love story!</div>
 
         <h2 class="couple-names">
-          Devi Pravalika
-          <span>and</span>
           Vamshi Krishna
+          <span>and</span>
+          Devi Pravalika
         </h2>
 
-        <!-- Family Names Lineage Section -->
+        <!-- Family Names Lineage Section (Vamshi on top, no Groom/Bride labels) -->
         <div class="family-lineage-box">
           <div class="lineage-row">
-            Bride: <span class="lineage-highlight">Devi Pravalika</span><br>
-            D/o <span class="lineage-highlight">Voruganti Nageshwar Rao (Late) - Aruna</span>
-          </div>
-          <div style="height: 1px; background: rgba(212, 175, 55, 0.25); margin: 7px 0;"></div>
-          <div class="lineage-row">
-            Groom: <span class="lineage-highlight">Vamshi Krishna</span><br>
+            <span class="lineage-highlight" style="font-size: 13.5px; font-weight: 700;">Vamshi Krishna</span><br>
             S/o <span class="lineage-highlight">Sammeta Ravindar - Laxmi</span>
+          </div>
+          <div style="height: 1px; background: rgba(212, 175, 55, 0.25); margin: 6px 0;"></div>
+          <div class="lineage-row">
+            <span class="lineage-highlight" style="font-size: 13.5px; font-weight: 700;">Devi Pravalika</span><br>
+            D/o <span class="lineage-highlight">Voruganti Nageshwar Rao (Late) - Aruna</span>
           </div>
         </div>
 
-        <p class="invite-text">
-          cordially request the honor of your presence and warm blessings as we celebrate our engagement ceremony and begin our journey together.
+        <!-- Illustrated Couple Artwork (Traditional Indian Couple) -->
+        <div class="couple-art-container">
+          <svg class="couple-illustration" viewBox="0 0 340 400" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#fdf4c9"/>
+                <stop offset="50%" stop-color="#d4af37"/>
+                <stop offset="100%" stop-color="#997316"/>
+              </linearGradient>
+              <linearGradient id="lehengaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#e0284f"/>
+                <stop offset="50%" stop-color="#b81439"/>
+                <stop offset="100%" stop-color="#7a0820"/>
+              </linearGradient>
+              <linearGradient id="sherwaniGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#1e2c38"/>
+                <stop offset="50%" stop-color="#141f29"/>
+                <stop offset="100%" stop-color="#0a1017"/>
+              </linearGradient>
+              <linearGradient id="dupattaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ff9eb5" stop-opacity="0.95"/>
+                <stop offset="50%" stop-color="#d6335c" stop-opacity="0.85"/>
+                <stop offset="100%" stop-color="#941334" stop-opacity="0.9"/>
+              </linearGradient>
+              <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="8" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+              </filter>
+            </defs>
+            <circle cx="170" cy="200" r="145" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.6"/>
+            <circle cx="170" cy="200" r="130" fill="none" stroke="rgba(212,175,55,0.2)" stroke-width="1"/>
+            <!-- Groom -->
+            <path d="M 188 88 Q 190 70 205 68 Q 225 67 228 85 Q 230 102 225 110 Q 218 105 210 105 Q 200 105 190 108 Z" fill="#151211"/>
+            <path d="M 194 85 Q 210 82 222 86 Q 224 105 218 118 Q 210 126 200 125 Q 192 116 194 85 Z" fill="#e8ba99"/>
+            <path d="M 200 122 L 212 122 L 214 138 L 198 138 Z" fill="#d9a885"/>
+            <path d="M 196 135 Q 206 132 216 135 L 217 144 Q 206 141 195 144 Z" fill="url(#goldGrad)"/>
+            <path d="M 175 142 Q 206 138 238 144 Q 248 185 245 255 L 225 355 L 180 355 L 182 250 Q 180 185 175 142 Z" fill="url(#sherwaniGrad)"/>
+            <line x1="207" y1="144" x2="207" y2="280" stroke="url(#goldGrad)" stroke-width="2.5"/>
+            <circle cx="207" cy="155" r="2.5" fill="#fdf4c9"/>
+            <circle cx="207" cy="170" r="2.5" fill="#fdf4c9"/>
+            <circle cx="207" cy="185" r="2.5" fill="#fdf4c9"/>
+            <circle cx="207" cy="200" r="2.5" fill="#fdf4c9"/>
+            <circle cx="207" cy="215" r="2.5" fill="#fdf4c9"/>
+            <path d="M 224 165 L 235 163 L 233 175 L 222 176 Z" fill="url(#goldGrad)"/>
+            <path d="M 175 148 Q 165 180 166 215 Q 170 230 178 235 L 186 226 Q 178 205 182 170 Z" fill="url(#sherwaniGrad)"/>
+            <path d="M 170 230 Q 175 236 182 235 Q 186 230 180 224 Z" fill="#e8ba99"/>
+            <!-- Bride -->
+            <path d="M 125 105 Q 120 75 142 74 Q 164 74 160 102 Q 165 140 168 180 Q 155 190 148 160 Q 140 140 135 170 Q 120 150 125 105 Z" fill="#181212"/>
+            <path d="M 132 90 Q 145 88 154 91 Q 158 108 152 120 Q 144 128 136 126 Q 130 115 132 90 Z" fill="#eed0b8"/>
+            <line x1="143" y1="84" x2="143" y2="94" stroke="url(#goldGrad)" stroke-width="1.5"/>
+            <circle cx="143" cy="96" r="2.5" fill="#fdf4c9"/>
+            <path d="M 138 123 L 148 123 L 150 138 L 136 138 Z" fill="#e0bfa5"/>
+            <circle cx="130" cy="108" r="2" fill="url(#goldGrad)"/>
+            <path d="M 136 132 Q 143 139 150 132" fill="none" stroke="url(#goldGrad)" stroke-width="3"/>
+            <circle cx="143" cy="138" r="2" fill="#e0284f"/>
+            <path d="M 124 140 Q 144 135 164 140 L 163 178 Q 144 182 124 178 Z" fill="url(#lehengaGrad)"/>
+            <path d="M 124 140 Q 144 135 164 140 L 164 146 Q 144 141 124 146 Z" fill="url(#goldGrad)"/>
+            <path d="M 124 172 Q 144 176 163 172 L 163 178 Q 144 182 124 178 Z" fill="url(#goldGrad)"/>
+            <path d="M 162 144 Q 174 175 168 206 Q 163 214 154 212 L 153 204 Q 160 185 155 160 Z" fill="#eed0b8"/>
+            <rect x="157" y="195" width="8" height="6" rx="2" fill="url(#goldGrad)"/>
+            <path d="M 126 144 Q 112 170 118 198 Q 124 212 138 210 L 138 202 Q 128 190 133 162 Z" fill="#eed0b8"/>
+            <rect x="122" y="194" width="8" height="6" rx="2" fill="url(#goldGrad)"/>
+            <path d="M 124 180 Q 144 183 163 180 Q 188 240 215 355 Q 144 365 75 355 Q 102 240 124 180 Z" fill="url(#lehengaGrad)"/>
+            <path d="M 123 178 Q 144 184 164 178 L 164 184 Q 144 190 123 184 Z" fill="url(#goldGrad)"/>
+            <path d="M 80 345 Q 144 356 210 345 L 215 355 Q 144 365 75 355 Z" fill="url(#goldGrad)"/>
+            <path d="M 88 335 Q 144 345 202 335" stroke="url(#goldGrad)" stroke-width="2" fill="none"/>
+            <line x1="144" y1="184" x2="144" y2="348" stroke="rgba(212,175,55,0.3)" stroke-width="1.5"/>
+            <line x1="135" y1="184" x2="115" y2="348" stroke="rgba(212,175,55,0.3)" stroke-width="1.5"/>
+            <line x1="153" y1="184" x2="173" y2="348" stroke="rgba(212,175,55,0.3)" stroke-width="1.5"/>
+            <circle cx="144" cy="300" r="3.5" fill="#fdf4c9"/>
+            <circle cx="120" cy="305" r="3.5" fill="#fdf4c9"/>
+            <circle cx="168" cy="305" r="3.5" fill="#fdf4c9"/>
+            <path d="M 126 142 Q 110 185 104 260 Q 102 310 96 350 Q 106 352 114 346 Q 118 290 128 210 Q 138 160 148 142 Z" fill="url(#dupattaGrad)"/>
+            <path d="M 126 142 Q 110 185 104 260 Q 102 310 96 350" stroke="url(#goldGrad)" stroke-width="2.5" fill="none"/>
+            <ellipse cx="152" cy="208" rx="6" ry="4" fill="#eed0b8"/>
+            <ellipse cx="156" cy="210" rx="5" ry="3.5" fill="#e8ba99"/>
+            <circle cx="152" cy="207" r="2.5" fill="#fff" filter="url(#softGlow)"/>
+            <polygon points="152,201 154,206 159,207 154,208 152,213 150,208 145,207 150,206" fill="#fff"/>
+          </svg>
+        </div>
+
+        <p class="invitation-quote">
+          Join us as we equip the rings, defeat singlehood, and unlock our greatest co-op adventure together!
         </p>
 
         <div class="gold-separator"></div>
 
         <div>
-          <div style="font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold-light);">Countdown to Muhurtham</div>
+          <div style="font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold-light);">Countdown to Muhurtham (10:00 AM)</div>
           <div class="countdown-grid">
             <div class="countdown-tile">
               <div class="timer-digit" id="cdDays">00</div>
@@ -942,7 +1127,7 @@
       </div>
     </section>
 
-    <!-- SLIDE 2: TIME, VENUE & LUNCH -->
+    <!-- SLIDE 2: TIME, VENUE WITH HP PETROL BUNK LANDMARK & DIRECT MAP LINK -->
     <section class="slide-section" id="slide1">
       <div class="royal-glass-card">
         <div class="sub-eyebrow">Auspicious Occasion</div>
@@ -962,9 +1147,9 @@
           <div class="detail-item-card">
             <div class="detail-icon-wrap">📍</div>
             <div>
-              <div class="detail-label">Celebration Venue</div>
+              <div class="detail-label">Celebration Venue &amp; Landmark</div>
               <div class="detail-val">SMR Function Hall</div>
-              <div class="detail-sub">Khammam, Telangana</div>
+              <div class="detail-sub">Near HP Petrol Bunk, Khammam, Telangana</div>
             </div>
           </div>
 
@@ -980,7 +1165,7 @@
 
         <div class="action-row">
           <a class="action-btn" href="#" onclick="downloadCalendar(event)">📅 Add to Calendar</a>
-          <a class="action-btn" href="https://maps.google.com/?q=SMR+Function+Hall+Khammam" target="_blank">🗺️ Open in Google Maps</a>
+          <a class="action-btn" href="https://maps.app.goo.gl/oYuoC5zPYs118FkA8" target="_blank" rel="noopener noreferrer">🗺️ Open in Google Maps</a>
         </div>
 
         <div class="scroll-hint" onclick="scrollToSlide(2)">
@@ -1021,50 +1206,82 @@
         </div>
 
         <div class="scroll-hint" onclick="scrollToSlide(3)">
-          <span>Scroll down to send blessings</span>
+          <span>Scroll down for Ring Toss Game!</span>
           <span>↓</span>
         </div>
       </div>
     </section>
 
-    <!-- SLIDE 4: BLESSINGS WALL & FLOWER SHOWER (NO RSVP FORM) -->
+    <!-- SLIDE 4: THE ROYAL VARMALA & RING TOSS GAME -->
     <section class="slide-section" id="slide3">
       <div class="royal-glass-card">
-        <div class="sub-eyebrow">Virtual Akshata / Blessings Wall</div>
-        <h2 style="font-family: var(--font-royal); font-size: 28px; color: #fff; margin-bottom: 4px;">Shower Your Blessings</h2>
-        <div class="gold-separator"></div>
+        <div class="sub-eyebrow">Interactive Celebration</div>
+        <h2 style="font-family: var(--font-royal); font-size: 26px; color: #fff; margin-bottom: 2px;">Varmala &amp; Ring Toss 🎮</h2>
+        <p style="font-size: 12px; color: #d1c7b8; margin-bottom: 6px;">Cheer for Team VK &amp; Team DP by tossing rings and garlands!</p>
 
-        <!-- Interactive Akshata / Flower shower button -->
-        <button class="shower-flower-btn" onclick="showerPetals()">
-          <span>🌸</span>
-          <span>Shower Flowers &amp; Akshata</span>
-          <span>✨</span>
-        </button>
-
-        <div class="wishes-counter-card">
-          <div class="counter-number" id="blessingCounter">1,024</div>
-          <div class="counter-caption">Heartfelt Blessings Showered for #VK&amp;DP</div>
-        </div>
-
-        <!-- Quick 1-line warm wish -->
-        <div class="guestbook-box">
-          <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold-light);">Leave a blessing for the couple</div>
-          <div class="guest-input-row">
-            <input type="text" id="quickWishInput" class="guest-input" placeholder="e.g. Wishing you both a lifetime of happiness!" />
-            <button class="send-wish-btn" onclick="postWish()">Post Wish</button>
+        <div class="game-arena-card">
+          <!-- Live Scoreboard -->
+          <div class="game-scoreboard">
+            <div class="game-team-score score-vk">
+              <div class="team-score-num" id="scoreVK">52</div>
+              <div class="team-label-tag">⚔️ Team VK</div>
+            </div>
+            <div class="vs-sign">VS</div>
+            <div class="game-team-score score-dp">
+              <div class="team-score-num" id="scoreDP">54</div>
+              <div class="team-label-tag">🌸 Team DP</div>
+            </div>
           </div>
-        </div>
 
-        <!-- Live revolving wish marquee -->
-        <div class="wishes-stream" id="wishesStream">
-          “May your love grow stronger with every passing year! - Friends &amp; Family”
+          <!-- Interactive Throw Stage -->
+          <div class="toss-stage" id="tossStage">
+            <!-- Target Groom -->
+            <div class="target-pedestal target-vk" onclick="throwItem('VK')">
+              <div class="target-avatar-circle">
+                <span>🤵</span>
+                <div class="garland-badge" id="badgeVK">52💍</div>
+              </div>
+              <div class="pedestal-base"></div>
+              <div class="target-label score-vk">Vamshi</div>
+            </div>
+
+            <!-- Target Bride -->
+            <div class="target-pedestal target-dp" onclick="throwItem('DP')">
+              <div class="target-avatar-circle">
+                <span>👰</span>
+                <div class="garland-badge" id="badgeDP">54💐</div>
+              </div>
+              <div class="pedestal-base"></div>
+              <div class="target-label score-dp">Pravalika</div>
+            </div>
+          </div>
+
+          <!-- Throw Buttons -->
+          <div class="game-actions-grid">
+            <button class="throw-btn btn-throw-vk" onclick="throwItem('VK')">
+              <span>💍 Toss Ring to VK (+1)</span>
+            </button>
+            <button class="throw-btn btn-throw-dp" onclick="throwItem('DP')">
+              <span>💐 Toss Garland to DP (+1)</span>
+            </button>
+          </div>
+
+          <!-- Mega celebration burst -->
+          <button class="btn-burst-both" onclick="burstBothCelebration()">
+            🌸 Shower Both with Flowers &amp; Confetti! 🎉
+          </button>
+
+          <!-- Commentary Feed -->
+          <div class="game-commentary" id="gameTicker">
+            "Team DP leads by 2 garlands! Tap avatars to toss!"
+          </div>
         </div>
       </div>
     </section>
 
   </main>
 
-  <div class="toast-popup" id="toastBox">🌸 Flower shower blessed! Thank you for your love!</div>
+  <div class="toast-popup" id="toastBox">💍 Perfect Toss for Team VK!</div>
 
   <script>
     const scroller = document.getElementById('fullpageScroller');
@@ -1074,47 +1291,72 @@
     const upBtn = document.getElementById('upBtn');
     const downBtn = document.getElementById('downBtn');
     const curtain = document.getElementById('sealCurtain');
+    let currentIndex = 0;
+
+    // Background Audio Logic with Auto-Play on First Gesture
     const audio = document.getElementById('bgMusic');
     const musicBtn = document.getElementById('musicToggle');
     const musicIcon = document.getElementById('musicIcon');
     let isMusicPlaying = false;
-    let currentIndex = 0;
 
-    // Music Control
-    function startMusic() {
-      if (!audio) return;
+    function playAudioImmediately() {
+      if (!audio || isMusicPlaying) return;
+      audio.volume = 1.0;
       audio.play().then(() => {
         isMusicPlaying = true;
-        musicBtn.classList.add('playing');
-        musicIcon.innerText = '🔊';
+        if (musicBtn) musicBtn.classList.add('playing');
+        if (musicIcon) musicIcon.innerText = '🔊';
+        removeInteractionListeners();
       }).catch(err => {
-        console.log("Audio autoplay waiting for user interaction:", err);
+        console.log("Autoplay waiting for touch gesture:", err);
       });
     }
 
-    function toggleMusic() {
+    function toggleMusic(e) {
+      if (e) e.stopPropagation();
       if (!audio) return;
       if (isMusicPlaying) {
         audio.pause();
         isMusicPlaying = false;
-        musicBtn.classList.remove('playing');
-        musicIcon.innerText = '🔇';
+        if (musicBtn) musicBtn.classList.remove('playing');
+        if (musicIcon) musicIcon.innerText = '🔇';
       } else {
         audio.play().then(() => {
           isMusicPlaying = true;
-          musicBtn.classList.add('playing');
-          musicIcon.innerText = '🔊';
+          if (musicBtn) musicBtn.classList.add('playing');
+          if (musicIcon) musicIcon.innerText = '🔊';
         });
       }
     }
 
-    musicBtn.addEventListener('click', toggleMusic);
+    if (musicBtn) {
+      musicBtn.addEventListener('click', toggleMusic);
+    }
 
-    // Break Seal Action: Initiates music & reveals card
+    playAudioImmediately();
+    window.addEventListener('load', playAudioImmediately);
+
+    function onFirstUserInteraction() {
+      playAudioImmediately();
+    }
+    const interactionEvents = ['click', 'touchstart', 'touchend', 'scroll', 'keydown'];
+    interactionEvents.forEach(evt => {
+      document.addEventListener(evt, onFirstUserInteraction, { passive: true });
+      window.addEventListener(evt, onFirstUserInteraction, { passive: true });
+    });
+
+    function removeInteractionListeners() {
+      interactionEvents.forEach(evt => {
+        document.removeEventListener(evt, onFirstUserInteraction);
+        window.removeEventListener(evt, onFirstUserInteraction);
+      });
+    }
+
+    // Quest Start Trigger
     function unlockInvitation() {
       curtain.classList.add('opened');
-      startMusic();
-      showerPetals();
+      playAudioImmediately();
+      launchFestiveConfetti(true);
       updateNavigation(0);
     }
 
@@ -1152,7 +1394,6 @@
       downBtn.disabled = (index === sections.length - 1);
     }
 
-    // Scroll listener with debounce
     let isScrolling;
     scroller.addEventListener('scroll', () => {
       clearTimeout(isScrolling);
@@ -1166,7 +1407,6 @@
       }, 60);
     });
 
-    // Keyboard Arrow Navigation
     window.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowDown' || e.key === 'PageDown') navigateSlide(1);
       else if (e.key === 'ArrowUp' || e.key === 'PageUp') navigateSlide(-1);
@@ -1198,39 +1438,72 @@
     setInterval(runCountdown, 1000);
     runCountdown();
 
-    // Petal shower
-    let blessings = 1024;
-    function showerPetals() {
-      blessings += 1;
-      const counter = document.getElementById('blessingCounter');
-      if (counter) counter.innerText = blessings.toLocaleString();
+    // ==============================================================
+    // RING & GARLAND TOSS INTERACTIVE GAME ENGINE
+    // ==============================================================
+    let scoreVK = parseInt(localStorage.getItem('toss_vk') || '52', 10);
+    let scoreDP = parseInt(localStorage.getItem('toss_dp') || '54', 10);
 
-      launchPetalsAndConfetti();
-      showToast("🌸 Blessings showered for Devi Pravalika & Vamshi Krishna!");
+    function updateGameScoreboard() {
+      document.getElementById('scoreVK').innerText = scoreVK;
+      document.getElementById('scoreDP').innerText = scoreDP;
+      document.getElementById('badgeVK').innerText = scoreVK + '💍';
+      document.getElementById('badgeDP').innerText = scoreDP + '💐';
+
+      localStorage.setItem('toss_vk', scoreVK);
+      localStorage.setItem('toss_dp', scoreDP);
+
+      const ticker = document.getElementById('gameTicker');
+      if (scoreVK > scoreDP) {
+        ticker.innerText = `⚔️ Team VK is in the lead by ${scoreVK - scoreDP} points!`;
+      } else if (scoreDP > scoreVK) {
+        ticker.innerText = `🌸 Team DP is in the lead by ${scoreDP - scoreVK} points!`;
+      } else {
+        ticker.innerText = `🔥 It's a dead heat tie at ${scoreVK} points each!`;
+      }
+    }
+    updateGameScoreboard();
+
+    function throwItem(team) {
+      const stage = document.getElementById('tossStage');
+      const projectile = document.createElement('div');
+      projectile.className = 'flying-item';
+
+      if (team === 'VK') {
+        scoreVK += 1;
+        projectile.innerText = '💍';
+        projectile.style.left = '30%';
+        projectile.style.bottom = '10px';
+        showToast("💍 Direct Hit! +1 for Team VK!");
+      } else {
+        scoreDP += 1;
+        projectile.innerText = '💐';
+        projectile.style.left = '70%';
+        projectile.style.bottom = '10px';
+        showToast("💐 Beautiful Garland Toss! +1 for Team DP!");
+      }
+
+      stage.appendChild(projectile);
+      setTimeout(() => projectile.remove(), 700);
+
+      updateGameScoreboard();
+      launchFestiveConfetti(false);
     }
 
-    function postWish() {
-      const input = document.getElementById('quickWishInput');
-      const text = input.value.trim();
-      if (!text) return;
-
-      const stream = document.getElementById('wishesStream');
-      stream.style.opacity = '0';
-      setTimeout(() => {
-        stream.innerText = `“${text}”`;
-        stream.style.opacity = '1';
-      }, 250);
-
-      input.value = "";
-      showerPetals();
-      showToast("✨ Your heartfelt blessing has been shared!");
+    function burstBothCelebration() {
+      scoreVK += 5;
+      scoreDP += 5;
+      updateGameScoreboard();
+      launchFestiveConfetti(true);
+      document.getElementById('gameTicker').innerText = "🎉 Mega celebration shower for both Vamshi & Pravalika! 🎉";
+      showToast("🌸 Double Flower Shower Blessed!");
     }
 
     function showToast(msg) {
       const toast = document.getElementById('toastBox');
       toast.innerText = msg;
       toast.classList.add('visible');
-      setTimeout(() => toast.classList.remove('visible'), 4000);
+      setTimeout(() => toast.classList.remove('visible'), 3200);
     }
 
     // Calendar .ics generator
@@ -1242,8 +1515,8 @@
         "PRODID:-//Devi Pravalika & Vamshi Krishna Engagement//EN",
         "BEGIN:VEVENT",
         "SUMMARY:Devi Pravalika & Vamshi Krishna Engagement (#VK&DP)",
-        "DESCRIPTION:Auspicious engagement ceremony of Devi Pravalika and Vamshi Krishna at SMR Function Hall, Khammam. Muhurtham at 10:00 AM followed by traditional lunch.",
-        "LOCATION:SMR Function Hall, Khammam, Telangana",
+        "DESCRIPTION:Auspicious engagement ceremony of Devi Pravalika and Vamshi Krishna at SMR Function Hall (Near HP Petrol Bunk, Khammam). Muhurtham at 10:00 AM followed by traditional lunch.",
+        "LOCATION:SMR Function Hall, Near HP Petrol Bunk, Khammam, Telangana",
         "DTSTART:20261015T100000",
         "DTEND:20261015T143000",
         "END:VEVENT",
@@ -1261,8 +1534,8 @@
       URL.revokeObjectURL(url);
     }
 
-    // Particle Simulator
-    function launchPetalsAndConfetti() {
+    // Royal Petal & Gold Celebration Confetti Simulator
+    function launchFestiveConfetti(isMega = false) {
       const canvas = document.getElementById('confettiCanvas');
       const ctx = canvas.getContext('2d');
       canvas.width = window.innerWidth;
@@ -1270,19 +1543,20 @@
 
       const particles = [];
       const petalColors = ['#ff758c', '#ff7eb3', '#d4af37', '#faeec7', '#ffb199', '#f39c12'];
+      const count = isMega ? 130 : 65;
 
-      for (let i = 0; i < 90; i++) {
+      for (let i = 0; i < count; i++) {
         particles.push({
-          x: canvas.width / 2 + (Math.random() - 0.5) * 200,
+          x: canvas.width / 2 + (Math.random() - 0.5) * 220,
           y: canvas.height / 2,
           rx: Math.random() * 6 + 4,
           ry: Math.random() * 10 + 6,
           color: petalColors[Math.floor(Math.random() * petalColors.length)],
-          vx: (Math.random() - 0.5) * 16,
-          vy: (Math.random() - 0.5) * 16 - 3,
+          vx: (Math.random() - 0.5) * (isMega ? 22 : 16),
+          vy: (Math.random() - 0.5) * (isMega ? 22 : 16) - 4,
           rot: Math.random() * Math.PI,
-          vRot: (Math.random() - 0.5) * 0.1,
-          gravity: 0.18,
+          vRot: (Math.random() - 0.5) * 0.12,
+          gravity: 0.19,
           opacity: 1,
           decay: Math.random() * 0.012 + 0.008
         });
